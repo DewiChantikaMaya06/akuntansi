@@ -25,7 +25,7 @@ class Login extends CI_Controller
         }
 
         if (!$this->user->validateLogin()) {
-            $this->load->view('login', compact('data'));
+            $this->load->view('login/login', compact('data'));
             return;
         }
 

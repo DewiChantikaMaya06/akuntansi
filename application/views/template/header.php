@@ -76,32 +76,32 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('dashboard') ?>">
-            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            <i class="ni ni-map-big text-dark"></i> Dashboard
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('data_akun') ?>">
-            <i class="ni ni-bullet-list-67 text-red"></i> Data Akun
+            <i class="ni ni-credit-card text-dark"></i> Data Akun
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('jurnal_umum') ?>">
-            <i class="ni ni-single-copy-04 text-yellow"></i> Jurnal Umum
+            <i class="ni ni-collection text-dark"></i> Jurnal Umum
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('buku_besar') ?>">
-            <i class="ni ni-collection text-red"></i> Buku Besar
+            <i class="ni ni-books text-dark"></i> Buku Besar
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('neraca_saldo') ?>">
-            <i class="ni ni-book-bookmark text-yellow"></i> Neraca Saldo
+            <i class="ni ni-chart-bar-32 text-dark"></i> Neraca Saldo
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('laporan') ?>">
-            <i class="fas fa-file-pdf text-red"></i>Laporan
+            <i class="fas fa-file-pdf text-dark"></i>Laporan
           </a>
         </li>
       </ul>

@@ -1,66 +1,38 @@
-<!-- Footer -->
-<footer class="footer">
-  <div class="row align-items-center justify-content-xl-between">
-    <div class="col-xl-6">
-      <div class="copyright text-center text-xl-left text-muted">
-        &copy; 2021 <a class="font-weight-bold ml-1" target="_blank">SIA-A Kel.5</a>
-      </div>
-    </div>
-  </div>
+<footer class="footer text-center text-muted">
+    Sistem Informasi Akuntansi-A Kel.11
 </footer>
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
 </div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
 </div>
-<!-- Argon Scripts -->
-<!-- Core -->
-<script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- Optional JS -->
-<script src="<?= base_url('assets/vendor/chart.js/dist/Chart.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
-<!-- Argon JS -->
-<script src="<?= base_url('assets/js/argon.js?v=1.0.0') ?>"></script>
-<!-- Datepicker -->
-<script src="<?= base_url('assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') ?>"></script>
-<!-- SWEETALERT -->
-<script src="<?= base_url('assets/vendor/sweetalert/sweetalert2.all.min.js') ?>"></script>
-<!-- Custom JS -->
-<script src="<?= base_url('assets/js/script.js') ?>"></script>
-<?php
-$pesan = $this->session->flashdata('berhasil');
-if (!empty($pesan)) :
-?>
-  <!-- SCRIPT SWEETALERT INLINE -->
-  <script>
-    $(window).on('load', function() {
-      let pesan = "<?= $pesan ?>";
-      swal('Berhasil!', pesan, 'success');
-    });
-  </script>
-<?php endif; ?>
-
-<?php
-$pesan = $this->session->flashdata('berhasilHapus');
-if (!empty($pesan)) :
-?>
-  <script>
-    $(window).on('load', function() {
-      let pesan = "<?= $pesan ?>";
-      swal('Berhasil!', pesan, 'success');
-    });
-  </script>
-<?php endif; ?>
-
-<?php
-$pesan = $this->session->flashdata('dataNull');
-if (!empty($pesan)) :
-?>
-  <script>
-    $(window).on('load', function() {
-      let pesan = "<?= $pesan ?>";
-      swal('Oops!', pesan, 'error');
-    });
-  </script>
-<?php endif; ?>
-</body>
-
-</html>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="<?= base_url('assets/temp/libs/jquery/dist/jquery.min.js') ?>"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="<?= base_url('assets/temp/libs/popper.js/dist/umd/popper.min.js') ?>"></script>
+<script src="<?= base_url('assets/temp/libs/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+<!-- apps -->
+<!-- apps -->
+<script src="<?= base_url('assets/temp/dist/js/app-style-switcher.js') ?>"></script>
+<script src="<?= base_url('assets/temp/dist/js/feather.min.js') ?>"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="<?= base_url('assets/temp/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') ?>"></script>
+<script src="<?= base_url('assets/temp/extra-libs/sparkline/sparkline.js') ?>"></script>
+<!--Wave Effects -->
+<!-- themejs -->
+<!--Menu sidebar -->
+<script src="<?= base_url('assets/temp/dist/js/sidebarmenu.js') ?>"></script>
+<!--Custom JavaScript -->
+<script src="<?= base_url('assets/temp/dist/js/custom.min.js') ?>"></script>
+<!--This page plugins -->
+<script src="<?= base_url('assets/temp/extra-libs/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= base_url('assets/temp/dist/js/pages/datatable/datatable-basic.init.js') ?>"></script>

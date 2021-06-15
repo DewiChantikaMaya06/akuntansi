@@ -122,7 +122,7 @@ class User extends CI_Controller
     {
         $id = $this->input->post('id', true);
         $noReffTransaksi = $this->jurnal->countJurnalNoReff($id);
-        if ($noReffTransaksi >= 0) {
+        if ($noReffTransaksi <= 0) {
             $this->session->set_flashdata('dataNull', 'No.Reff ' . $id . ' Tidak Bisa Di Hapus Karena Data Akun Ada Di Jurnal Umum');
             redirect('data_akun');
         }

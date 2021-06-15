@@ -1,64 +1,35 @@
-  <!-- Main content -->
-  <div class="main-content">
-    <!-- Top navbar -->
-    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
-      <div class="container-fluid">
-        <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="">Dashboard</a>
-        <!-- Form -->
-        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-          <div class="form-group mb-0">
-
-          </div>
-        </form>
-        <!-- User -->
-        <ul class="navbar-nav align-items-center d-none d-md-flex">
-          <li class="nav-item dropdown">
-            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-4-800x800.jpg') ?>">
-                </span>
-                <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold"><?= ucwords($this->session->userdata('username')) ?></span>
-                </div>
-              </div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-              <a href="<?= base_url('logout') ?>" class="dropdown-item">
-                <i class="ni ni-user-run"></i>
-                <span>Logout</span>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Header -->
-    <div class="header bg-gradient-dark pb-8 pt-5 pt-md-8">
-      <div class="container-fluid">
-        <div class="header-body">
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-7 align-self-center">
+        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">DASHBOARD</h4>
+        <div class="d-flex align-items-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb m-0 p-0">
+              <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>" class="text-muted"><?= $titleTag ?></a></li>
+              <!-- <li class="breadcrumb-item text-muted active" aria-current="page"><?= $titleTag ?></li> -->
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--7">
-      <div class="row">
-      </div>
-      <div class="row mt-5">
-        <div class="col mb-5">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Data Akun</h3>
-                </div>
-              </div>
-            </div>
+  </div>
+  <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- basic table -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Data Akun</h4>
             <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
+              <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                <thead>
                   <tr>
                     <th scope="col">No.</th>
                     <th scope="col">No.Reff</th>
@@ -91,19 +62,17 @@
             </div>
           </div>
         </div>
-        <div class="col mb-5 mb-xl-0">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Jurnal Umum</h3>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
+    <!-- order table -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Jurnal Umum</h4>
             <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
+              <table id="default_order" class="table table-striped table-bordered display no-wrap" style="width:100%">
+                <thead>
                   <tr>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Nama Akun</th>
@@ -176,28 +145,29 @@
               </table>
             </div>
           </div>
-          <div class="col mt-5 p-0">
-            <div class="card shadow">
-              <div class="card-header border-0">
-                <div class="row align-items-center">
-                  <div class="col">
-                    <h3 class="mb-0">Buku Besar</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-wrapper mx-3">
-                <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
-                  <?php
-                  $i = 0;
-                  foreach ($dataAkunTransaksi as $row) :
-                    $i++;
-                  ?>
-                    <li class="nav-item mb-4">
-                      <a class="nav-link mb-sm-3 mb-md-0 tab-nav" id="tabs-icons-text-<?= $i ?>-tab" data-toggle="tab" href="#tabs-icons-text-<?= $i ?>" role="tab" aria-controls="tabs-icons-text-<?= $i ?>" aria-selected="true"><?= $row->nama_reff ?></a>
-                    </li>
-                  <?php endforeach ?>
-                </ul>
-              </div>
+        </div>
+      </div>
+    </div>
+    <!-- multi-column ordering -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Buku Besar</h4>
+            <div class="nav-wrapper mx-3">
+              <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                <?php
+                $i = 0;
+                foreach ($dataAkunTransaksi as $row) :
+                  $i++;
+                ?>
+                  <li class="nav-item mb-4">
+                    <a class="nav-link mb-sm-3 mb-md-0 tab-nav" id="tabs-icons-text-<?= $i ?>-tab" data-toggle="tab" href="#tabs-icons-text-<?= $i ?>" role="tab" aria-controls="tabs-icons-text-<?= $i ?>" aria-selected="true"><?= $row->nama_reff ?></a>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+            <div class="table-responsive">
               <div class="card" style="border-top: 2px solid white">
                 <div class="card-body">
                   <div class="tab-content" id="myTabContent">
@@ -301,93 +271,12 @@
                 </div>
               </div>
             </div>
-            <div class="col mt-5 p-0">
-              <div class="card shadow">
-                <div class="card-header border-0">
-                  <div class="row align-items-center">
-                    <div class="col">
-                      <h3 class="mb-0">Neraca Saldo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="table-responsive">
-                  <?php
-                  $a = 0;
-                  $debit = 0;
-                  $kredit = 0;
-                  ?>
-                  <!-- Projects table -->
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th scope="col">No. Akun</th>
-                        <th scope="col">Nama Akun</th>
-                        <th scope="col">Debit</th>
-                        <th scope="col">Kredit</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      $totalDebit = 0;
-                      $totalKredit = 0;
-                      for ($i = 0; $i < $jumlah; $i++) :
-                        $a++;
-                        $s = 0;
-                        $deb = $saldo[$i];
-                      ?>
-                        <tr>
-                          <td>
-                            <?= $data[$i][$s]->no_reff ?>
-                          </td>
-                          <td>
-                            <?= $data[$i][$s]->nama_reff ?>
-                          </td>
-                          <?php
-                          for ($j = 0; $j < count($data[$i]); $j++) :
-                            if ($deb[$j]->jenis_saldo == "debit") {
-                              $debit = $debit + $deb[$j]->saldo;
-                            } else {
-                              $kredit = $kredit + $deb[$j]->saldo;
-                            }
-                            $hasil = $debit - $kredit;
-                          endfor
-                          ?>
-                          <?php
-                          if ($hasil >= 0) { ?>
-                            <td><?= 'Rp. ' . number_format($hasil, 0, ',', '.') ?></td>
-                            <td> - </td>
-                            <?php $totalDebit += $hasil; ?>
-                          <?php } else { ?>
-                            <td> - </td>
-                            <td><?= 'Rp. ' . number_format(abs($hasil), 0, ',', '.') ?></td>
-                            <?php $totalKredit += $hasil; ?>
-                          <?php } ?>
-                          <?php
-                          $debit = 0;
-                          $kredit = 0;
-                          ?>
-                        </tr>
-                      <?php endfor ?>
-                      <?php if ($totalDebit != abs($totalKredit)) { ?>
-                        <tr>
-                          <td class="text-center" colspan="2"><b>Total</b></td>
-                          <td class="text-danger"><?= 'Rp. ' . number_format($totalDebit, 0, ',', '.') ?></td>
-                          <td class="text-danger"><?= 'Rp. ' . number_format(abs($totalKredit), 0, ',', '.') ?></td>
-                        </tr>
-                        <tr class="bg-danger text-center">
-                          <td colspan="6" class="text-white" style="font-weight:bolder;font-size:19px">TIDAK SEIMBANG</td>
-                        </tr>
-                      <?php } else { ?>
-                        <tr>
-                          <td class="text-center" colspan="2"><b>Total</b></td>
-                          <td class="text-success"><?= 'Rp. ' . number_format($totalDebit, 0, ',', '.') ?></td>
-                          <td class="text-success"><?= 'Rp. ' . number_format(abs($totalKredit), 0, ',', '.') ?></td>
-                        </tr>
-                        <tr class="bg-success text-center">
-                          <td colspan="6" class="text-white" style="font-weight:bolder;font-size:19px">SEIMBANG</td>
-                        </tr>
-                      <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+  </div>
+</div>
